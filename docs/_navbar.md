@@ -7,6 +7,6 @@
   * [后台项目](http://ipad.xianzhiloushop.com:8899/summary/wechat_server.git)
   * [前端项目](http://ipad.xianzhiloushop.com:8899/summary/wechat_client.git)
   
-* 常见问题
+* [常见问题](/problem/)
 
 * 更新日志
