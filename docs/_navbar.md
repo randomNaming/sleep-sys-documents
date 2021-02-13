@@ -4,8 +4,9 @@
   * [移动端](http://www.macrozheng.com/app/index.html)
 
 * 项目地址
-  * [后台项目](http://ipad.xianzhiloushop.com:8899/summary/wechat_server.git)
-  * [前端项目](http://ipad.xianzhiloushop.com:8899/summary/wechat_client.git)
+  * [后端项目](https://gitee.com/garrettxia/sleep-monitoring-platform)
+  * [后台管理项目](https://gitee.com/zltree/sleep-admin)
+  * [APP项目](https://gitee.com/davidchen27/sleep-client-frontend)
   
 * [常见问题](/problem/)
 
