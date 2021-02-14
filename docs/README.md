@@ -12,8 +12,8 @@
 
 ## 指南
 - [项目介绍](duide/)
-- [快速了解]
-- [快速开始]
+- [快速了解](duide/quick_understand.md)
+- [快速开始](duide/quick_start.md)
 
 ## 后端手册
 ## APP手册
