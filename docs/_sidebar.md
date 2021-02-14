@@ -6,10 +6,14 @@
   * APP手册
   * 后台管理手册
   * 后端手册
+    * [权限控制](architect/server_manual/RBAC.md) 
+    * [系统缓存](architect/server_manual/cache.md)
+    * [异常处理](architect/server_manual/exception_handle.md)
+    * [日志处理](architect/server_manual/LOG.md)
 * 业务篇
 * 部署
 * 工具
 * 鸣谢
-  * 代码贡献
-  * 特别鸣谢
+  * [代码贡献](thanks/contribution.md)
+  * [特别鸣谢](thanks/)
 

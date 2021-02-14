@@ -11,9 +11,9 @@
 - APP项目：[https://gitee.com/davidchen27/sleep-client-frontend](https://gitee.com/davidchen27/sleep-client-frontend)
 
 ## 指南
-- [项目介绍](duide/)
-- [快速了解](duide/quick_understand.md)
-- [快速开始](duide/quick_start.md)
+- [项目介绍](guide/)
+- [快速了解](guide/quick_understand.md)
+- [快速开始](guide/quick_start.md)
 
 ## 后端手册
 ## APP手册

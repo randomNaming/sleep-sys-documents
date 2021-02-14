@@ -52,7 +52,7 @@ spring:
   profiles:
     active: test # 将原有的dev变量修改为test
     
-# ....其他配置信息idea
+# ....其他配置
 ```
 
 ![IDEA 运行](http://123.57.76.147:9000/docs/quick_start/idea_run.png)  
