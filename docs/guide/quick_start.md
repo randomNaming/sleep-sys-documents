@@ -22,6 +22,8 @@ Docker容器已经包含了～
 ```bash
 # 命令行工具到达项目根目录文件下
 cd /Users/garrett/Documents/project/sleep-monitoring-platform
+# 阿里云容器镜像服务账号登录
+docker login --username=[阿里云容器服务账号] registry.cn-beijing.aliyuncs.com
 # 确认该目录下存在docker-compose.yml文件
 docker-compose up
 ```
