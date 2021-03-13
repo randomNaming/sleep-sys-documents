@@ -46,20 +46,6 @@ docker-compose up
 # idea已集成，可跳过安装
 ```
 
-修改项目环境变量(application.yml)
-```yaml
-# ....其他配置
-
-spring:
-  profiles:
-    active: test # 将原有的dev变量修改为test
-    
-# ....其他配置
-```
-
-![IDEA 运行](http://123.57.76.147:9000/docs/quick_start/idea_run.png)  
-待 Maven **导入完依赖** 点击`运行`即可
-
 ## 开发准备
 > #### TIP
 >
@@ -69,6 +55,61 @@ spring:
 或者 [eclipse](https://blog.csdn.net/magi1201/article/details/85995987)安装 lombok 插件，
 我们用它可以省略get，set 方法，可以使代码更简洁，具体查看 [lombok教程](https://yuanrengu.com/2020/baec5dff.html)
 2. 你需要有 Spring boot 的基础，推荐教程 [Spring Boot 2.0 学习](https://github.com/ityouknow/spring-boot-examples)
+project_from_git
+
+## 运行项目
+> #### TIP
+> 
+> 本项目是前后端分离项目,建议前后端都启动好,以便有良好的使用体验
+
+### 后端
+
+打开IDEA,直接导入Git项目
+
+![IDEA导入Git项目](http://sleepclound.ltd:9000/docs/quick_start/perject_from_git.png)
+
+输入项目地址
+
+```
+https://gitee.com/garrettxia/sleep-monitoring-platform.git
+```
+![IDEA的VSC](http://sleepclound.ltd:9000/docs/quick_start/idea_vsc.jpg)
+
+打开数据库，创建一个新库 `sleep_sys_schema`，导入database文件夹中的初始化脚本库脚本 `sleep_sys_schema-mysql-8.0.2.sql`
+![Navicat的sql文件执行](http://sleepclound.ltd:9000/docs/quick_start/navicat_sql.png)
+
+修改配置，如果你的数据库账号或密码不是`sleep_account`和`sleep_account`，那么需要在 `application-dev.yml` 配置文件中做相应的修改
+```yaml
+# ...其他配置
+
+spring:
+  datasource:
+    username: sleep_account
+	# 明文密码
+    password: sleep_account # 这里修改成你本地数据的密码
+    driver-class-name: com.mysql.cj.jdbc.Driver # mysql8.0+ 以上版本需要加 cj,否则 com.mysql.jdbc.Driver即可
+    url: jdbc:mysql://localhost:3306/sleep_sys_schema?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    # 数据源其他配置 如果使用的是明文密码，以下这一段务必注释掉
+    # druid:
+    #   filter:
+    #     config:
+    #       enabled: true
+    #   connection-properties: config.decrypt=true;config.decrypt.key=${public-key};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+```
+
+修改项目环境变量(application.yml)
+```yaml
+# ....其他配置
+
+spring:
+  profiles:
+    active: dev # dev-本地数据库 test-测试数据库
+    
+# ....其他配置
+```
+
+![IDEA 运行](http://sleepclound.ltd:9000/docs/quick_start/idea_run.png)  
+待 Maven **导入完依赖** 点击`运行`即可
 
 ### 后端运行常见问题
 
@@ -80,6 +121,6 @@ IDEA2021 已内置 Lombok插件,或许是您的集成工具版本过低，为安
 
 解决方法：
 1. File → settings → Plugins, 然后搜索“Lombok”
-![IDEA Lombok 安装](http://123.57.76.147:9000/docs/quick_start/idea_lombok_install.png)
+![IDEA Lombok 安装](http://sleepclound.ltd:9000/docs/quick_start/idea_lombok_install.png)
 2. 重启IDEA即可
 3. 运行项目
