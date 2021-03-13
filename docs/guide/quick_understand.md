@@ -39,6 +39,37 @@ _TODO_ 支持在线用户管理与服务器性能监控，支持限制单用户�
 * 服务监控：监控服务器的负载情况
 * 运维管理：一键部署你的应用
 
+## 项目结构
+
+* `common` 为系统的公共模块，各种工具类，公共配置存在该模块
+* `logger` 为系统的日志模块，其他模块如果需要记录日志需要引入该模块
+* `system` 为系统核心模块
+* `tools` 为第三方工具模块，包含：授权登录，图床，邮件，云存储，本地存储等
+
+## 详细结构
+```
+sleep
+ ├── common 公共模块
+ │   ├── base 提供了Entity、DTO基类和mapstruct的通用mapper
+ │   ├── config 自定义权限实现、redis配置、swagger配置、Rsa配置等
+ │   ├── constant 公共常量
+ │   ├── exception异常
+ │   └── utils 公共工具类
+ ├── logger 系统日志模块
+ │   ├── annotation 日志注解
+ │   ├── aspect 切面
+ ├── SleepApplication.java 系统启动入口
+ ├── system 系统核心模块
+ │   ├── config 配置跨域与静态资源，与数据权限
+ │   ├── controller api网关
+ │   ├── dao 持久层
+ │   ├── entity 实体类
+ │   ├── security 鉴权
+ │   ├── service 服务层
+ │   └── utils 系统工具类
+ └── tools 系统第三方工具模块
+```
+
 ## 数据库表概览
 > sleep 项目目前有x张数据表，业务逻辑有一定复杂度
 

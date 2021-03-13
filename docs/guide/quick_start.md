@@ -76,6 +76,7 @@ https://gitee.com/garrettxia/sleep-monitoring-platform.git
 ![IDEA的VSC](http://sleepclound.ltd:9000/docs/quick_start/idea_vsc.jpg)
 
 打开数据库，创建一个新库 `sleep_sys_schema`，导入database文件夹中的初始化脚本库脚本 `sleep_sys_schema-mysql-8.0.2.sql`
+
 ![Navicat的sql文件执行](http://sleepclound.ltd:9000/docs/quick_start/navicat_sql.png)
 
 修改配置，如果你的数据库账号或密码不是`sleep_account`和`sleep_account`，那么需要在 `application-dev.yml` 配置文件中做相应的修改
@@ -121,6 +122,8 @@ IDEA2021 已内置 Lombok插件,或许是您的集成工具版本过低，为安
 
 解决方法：
 1. File → settings → Plugins, 然后搜索“Lombok”
+
 ![IDEA Lombok 安装](http://sleepclound.ltd:9000/docs/quick_start/idea_lombok_install.png)
+
 2. 重启IDEA即可
 3. 运行项目
