@@ -6,6 +6,7 @@
   * APP手册
   * 后台管理手册
   * 后端手册
+    * [数据库版本控制](architect/server_manual/database.md)
     * [权限控制](architect/server_manual/RBAC.md) 
     * [系统缓存](architect/server_manual/cache.md)
     * [异常处理](architect/server_manual/exception_handle.md)
