@@ -75,10 +75,6 @@ https://gitee.com/garrettxia/sleep-monitoring-platform.git
 ```
 ![IDEA的VSC](http://sleepclound.ltd:9000/docs/quick_start/idea_vsc.jpg)
 
-打开数据库，创建一个新库 `sleep_sys_schema`，导入database文件夹中的初始化脚本库脚本 `sleep_sys_schema-mysql-8.0.2.sql`
-
-![Navicat的sql文件执行](http://sleepclound.ltd:9000/docs/quick_start/navicat_sql.png)
-
 修改配置，如果你的数据库账号或密码不是`sleep_account`和`sleep_account`，那么需要在 `application-dev.yml` 配置文件中做相应的修改
 ```yaml
 # ...其他配置
@@ -109,8 +105,18 @@ spring:
 # ....其他配置
 ```
 
-![IDEA 运行](http://sleepclound.ltd:9000/docs/quick_start/idea_run.png)  
+打开数据库，创建一个新库 `sleep_sys_schema`
+
+!> 本项目已经配置`Flyway`数据库版本管理工具,如无定制化需求,可 **跳过** 下一步sql脚本手动导入
+
+#### sql脚本手动导入
+导入database文件夹中的初始化脚本库脚本 `sleep_sys_schema-mysql-8.0.2.sql`
+
+![Navicat的sql文件执行](http://sleepclound.ltd:9000/docs/quick_start/navicat_sql.png)
+
 待 Maven **导入完依赖** 点击`运行`即可
+
+![IDEA 运行](http://sleepclound.ltd:9000/docs/quick_start/idea_run.png)  
 
 ### 后端运行常见问题
 
