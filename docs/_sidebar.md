@@ -4,6 +4,8 @@
   * [快速开始](guide/quick_start.md)
 * 架构篇
   * APP手册
+	* [演示效果](architect/application/README.md)
+	* [介绍](architect/application/DEMO.md)
   * 后台管理手册
   * 后端手册
     * [数据库版本控制](architect/server_manual/database.md)

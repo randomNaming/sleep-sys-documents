@@ -5,8 +5,14 @@
 > 这样，就构造成“用户-角色-菜单” 的授权模型  
 > 在这种模型中，用户与角色、角色与菜单之间构成了多对多的关系，如下图
 
-![RBAC表结构图](http://123.57.76.147:9000/docs/server_manual/RBAC.jpg)
+![RBAC表结构图](http://81.69.99.37:9000/docs/server_manual/RBAC.jpg)
 
 ## 安全框架
 ## 数据交互
 ## 接口放行
+
+
+
+
+
+ {docsify-updated}
