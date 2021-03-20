@@ -15,6 +15,7 @@
     * [日志处理](architect/server_manual/LOG.md)
 * 业务篇
 * 部署
+	* [对象存储服务](deploy/MINIO.md)
 * 工具
 * 鸣谢
   * [代码贡献](thanks/contribution.md)
