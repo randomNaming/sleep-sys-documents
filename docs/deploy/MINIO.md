@@ -12,7 +12,7 @@ MinIO 是一款基于Go语言的高性能对象存储服务，在Github上已有
 
 * 下载MinIO的Docker镜像：
 * 在Docker容器中运行MinIO，这里我们将MiniIO的数据和配置文件夹挂在到宿主机上
-* 运行成功后，访问该地址来登录并使用MinIO，默认Access Key和Secret都是`minioadmin`
+
 ```bash
 docker run -p 9000:9000 --name minio \
 -d --restart=always \
@@ -22,4 +22,7 @@ docker run -p 9000:9000 --name minio \
 -v /usr/minio_config:/root/.minio \
 minio/minio server /data
 ```
+
+* 运行成功后，访问该地址来登录并使用MinIO，默认Access Key和Secret都是`minioadmin`
+
 http://127.0.0.1:9000
