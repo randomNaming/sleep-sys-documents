@@ -16,6 +16,8 @@
 * 业务篇
 * 部署
 	* [对象存储服务](deploy/MINIO.md)
+	* [代码版本控制仓库](deploy/VCS.md)
+	* [自动化部署](deploy/auto_deploy.md)
 * 工具
 * 鸣谢
   * [代码贡献](thanks/contribution.md)
