@@ -17,7 +17,8 @@ _TODO_ 支持在线用户管理与服务器性能监控，支持限制单用户�
 | 技术 | 版本 | 说明 |
 | --- | ---- | --- |
 |Spring Boot|2.4.2|容器+MVC框架|
-|Spring Security|5.1.4|认证和授权框架|
+|Spring Cloud Security|2.2.5|认证和授权框架|
+|Spring Cloud Oauth2|2.2.5|授权和资源管理框架|
 |MyBatis|2.1.2|ORM框架|
 |PageHelper|1.3.0|MyBatis物理分页插件|
 |Swagger|3.0.0|接口文档生成工具|
