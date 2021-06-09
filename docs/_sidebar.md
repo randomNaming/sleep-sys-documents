@@ -20,6 +20,7 @@
 	* [代码版本控制仓库](deploy/VCS.md)
 	* [自动化部署](deploy/auto_deploy.md)
 * 工具
+	* [数据库文档生成](tools/screw.md)
 * 鸣谢
   * [代码贡献](thanks/contribution.md)
   * [特别鸣谢](thanks/)

@@ -3,7 +3,7 @@
 涵盖了SpringBoot 2.4.0、MyBatis 3.4.6、Elasticsearch 7.6.2、Redis 5.0、Mysql5.7等技术，采用Docker容器化部署。
 
 ## 在线体验
-预览地址：
+预览地址：[http://sleepclound.ltd](http://sleepclound.ltd)  
 账号密码：admin/admin
 ## 项目地址
 - 后端项目：[https://gitee.com/garrettxia/sleep-monitoring-platform](https://gitee.com/garrettxia/sleep-monitoring-platform)
