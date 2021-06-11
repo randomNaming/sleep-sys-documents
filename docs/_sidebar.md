@@ -10,10 +10,13 @@
 	* [去除权限控制](architect/admin_platform/remove_permission.md)
   * 后端手册
     * [数据库版本控制](architect/server_manual/database.md)
+	* [物理分页](architect/server_manual/page_handle.md)
     * [权限控制](architect/server_manual/RBAC.md) 
     * [系统缓存](architect/server_manual/cache.md)
     * [异常处理](architect/server_manual/exception_handle.md)
     * [日志处理](architect/server_manual/LOG.md)
+* 约定与规范
+	* [接口设计](standard/api.md)
 * 业务篇
 * 部署
 	* [对象存储服务](deploy/MINIO.md)
