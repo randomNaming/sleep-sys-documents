@@ -1,6 +1,6 @@
 * [指南](/guide/)
 * 演示
-  * [后台管理](http://report.xianzhilou.com:9527)
+  * [后台管理](http://sleepclound.ltd)
   * [移动端](http://sleep.mcfunny.cn/#/)
 
 * 项目地址
