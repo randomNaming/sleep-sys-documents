@@ -83,31 +83,31 @@ Flyway会再次扫描应用的文件系统和类路径，迁移依据历史表�
 * 修改对应的配置文件`application-*.yml`,对数据源和Flyway进行配置
 ```yaml
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/sleep_sys_schema?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
-    username: sleep_account # 你的数据库账号
-    password: sleep_account # 你的数据库密码
-  flyway:
-    # 启用Flyway功能，默认开启，可不写
-    enabled: true
-    # 禁用Flyway的clean命令，使用clean命令会删除schema下的所有表
-    clean-disabled: true
-    # 设置Flyway的SQL脚本路径
-    locations: classpath:db/migration
-    # 设置版本信息控制表名称，默认flyway_schema_history
-    table: flyway_schema_history
-    # 在执行migrate命令时需要有flyway_schema_history表，通过baseline命令可以生成该表
-    baseline-on-migrate: true
-    # 指定baseline版本号，低于该版本的SQL脚本在migrate是不会执行
-    baseline-version: 1
-    # 设置字符编码
-    encoding: UTF-8
-    # 不允许不按顺序迁移
-    out-of-order: false
-    # 设置Flyway管控的schema，不设置的话为datasourcel.url中指定的schema
-    schemas: flyway
-    # 执行migrate时开启校验
-    validate-on-migrate: true
+	datasource:
+		url: jdbc:mysql://localhost:3306/sleep_sys_schema?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+		username: sleep_account # 你的数据库账号
+		password: sleep_account # 你的数据库密码
+	flyway:
+		# 启用Flyway功能，默认开启，可不写
+		enabled: true
+		# 禁用Flyway的clean命令，使用clean命令会删除schema下的所有表
+		clean-disabled: true
+		# 设置Flyway的SQL脚本路径
+		locations: classpath:db/migration
+		# 设置版本信息控制表名称，默认flyway_schema_history
+		table: flyway_schema_history
+		# 在执行migrate命令时需要有flyway_schema_history表，通过baseline命令可以生成该表
+		baseline-on-migrate: true
+		# 指定baseline版本号，低于该版本的SQL脚本在migrate是不会执行
+		baseline-version: 1
+		# 设置字符编码
+		encoding: UTF-8
+		# 不允许不按顺序迁移
+		out-of-order: false
+		# 设置Flyway管控的schema，不设置的话为datasourcel.url中指定的schema
+		schemas: flyway
+		# 执行migrate时开启校验
+		validate-on-migrate: true
 ```
 * 最后直接运行SpringBoot应用，即可自动创建好对应的数据库，控制台会输出如下信息
 ```
