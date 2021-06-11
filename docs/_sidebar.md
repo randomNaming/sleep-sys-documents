@@ -4,8 +4,8 @@
   * [快速开始](guide/quick_start.md)
 * 架构篇
   * APP手册
-	* [演示效果](architect/application/README.md)
-	* [介绍](architect/application/DEMO.md)
+    * [介绍](architect/application/)
+	* [演示效果](architect/application/DEMO.md)
   * 后台管理手册
 	* [去除权限控制](architect/admin_platform/remove_permission.md)
   * 后端手册
