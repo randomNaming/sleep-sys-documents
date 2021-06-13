@@ -19,6 +19,77 @@
 
 > 如果你的应用很庞大或者你预计它将会变的很庞大，那 `应该` 将 `API` 放到子域下。这种做法可以保持某些规模化上的灵活性
 
+### 返回的报文 Response
+
+所有的 `API` 响应，`必须` 遵守 `HTTP` 设计规范，`必须` 选择合适的 `HTTP` 状态码。`一定不可` 所有接口都返回状态码为 `200` 的 `HTTP` 响应，如：
+
+```
+HTTP/1.1 200 ok
+Content-Type: application/json
+Server: example.com
+
+{
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "username": "username"
+    }
+}
+```
+
+或
+
+```
+HTTP/1.1 200 ok
+Content-Type: application/json
+Server: example.com
+
+{
+    "code": -1,
+    "msg": "该活动不存在",
+}
+```
+
+#### 200 OK
+
+正确示例：
+
+额外的媒体信息
+```
+{
+    "data": [
+        {
+            "id": 1,
+            "avatar": "https://lorempixel.com/640/480/?32556",
+            "nickname": "fwest",
+            "last_logined_time": "2018-05-29 04:56:43",
+            "has_registed": true
+        },
+        {
+            "id": 2,
+            "avatar": "https://lorempixel.com/640/480/?86144",
+            "nickname": "zschowalter",
+            "last_logined_time": "2018-06-16 15:18:34",
+            "has_registed": true
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "total": 101,
+            "count": 2,
+            "per_page": 2,
+            "current_page": 1,
+            "total_pages": 51,
+            "links": {
+                "next": "http://api.example.com?page=2"
+            }
+        }
+    }
+}
+```
+
+> 其中，分页和其他额外的媒体信息，必须放到 `meta` 字段中。
+
 ### 版本
 
 所有的 `API` 必须保持向后兼容，你 `必须` 在引入新版本 `API` 的同时确保旧版本 `API` 仍然可用。 `应该` 为其提供版本支持
