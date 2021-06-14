@@ -20,6 +20,7 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU1ODk2N
 
 ## 自定义异常
 
+#### 自定义**登录失败**异常信息
 在使用`Spring Security Oauth2`登录和鉴权失败时，默认返回的异常信息如下
 
 ```json
@@ -43,6 +44,85 @@ public class OauthException extends OAuth2Exception {
 }
 ```
 
+##### 新增CustomOauthExceptionSerializer
+
+```java
+public class CustomOauthExceptionSerializer extends StdSerializer<CustomOauthException> {
+    public CustomOauthExceptionSerializer() {
+        super(CustomOauthException.class);
+    }
+
+    @Override
+    public void serialize(CustomOauthException value, JsonGenerator gen, SerializerProvider provider) throws IOException {
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+
+        gen.writeStartObject();
+		gen.writeStringField("error_code", String.valueOf(e.getHttpErrorCode()));
+		gen.writeStringField("message", e.getMessage());
+		gen.writeStringField("timestamp", DateUtil.formatDateTime(new Date()));
+		if (e.getAdditionalInformation()!=null) {
+			for (Map.Entry<String, String> entry : e.getAdditionalInformation().entrySet()) {
+				String key = entry.getKey();
+				String add = entry.getValue();
+				gen.writeStringField(key, add);
+			}
+		}
+		gen.writeEndObject();
+    }
+}
+```
+
+##### 添加OauthWebResponseException
+
+添加`OauthWebResponseException`，登录发生异常时指定`exceptionTranslator`
+```java
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
+import org.springframework.security.oauth2.provider.error.DefaultWebResponseExceptionTranslator;
+import org.springframework.stereotype.Component;
+
+@Component("oauthWebResponseException")
+public class OauthWebResponseException extends DefaultWebResponseExceptionTranslator {
+
+    @Override
+    public ResponseEntity<OAuth2Exception> translate(Exception e) throws Exception {
+        OAuth2Exception oAuth2Exception = (OAuth2Exception) e;
+        return ResponseEntity
+                .status(oAuth2Exception.getHttpErrorCode())
+                .body(new OauthException(oAuth2Exception.getMessage()));
+    }
+}
+```
+
+##### 修改授权服务器配置
+
+```java
+@Configuration
+@EnableAuthorizationServer
+@RequiredArgsConstructor
+public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
+
+    private final AuthenticationManager authenticationManager;
+    private final UserDetailServiceImpl userDetailService;
+    private final OauthWebResponseException oauthWebResponseException;
+    @Qualifier("jwtTokenStore")
+    private final TokenStore tokenStore;
+    private final JwtAccessTokenConverter jwtAccessTokenConverter;
+
+    @Override
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
+        endpoints.authenticationManager(authenticationManager)
+                .userDetailsService(userDetailService)
+                // 自定义令牌存储策略 - accessToken转成JWT token
+                .tokenStore(tokenStore)
+				/** 加入自定义异常处理 */
+                .exceptionTranslator(oauthWebResponseException)
+                .accessTokenConverter(jwtAccessTokenConverter);
+    }
+	
+	// ...其他配置
+}
+```
 
 
  {docsify-updated}
