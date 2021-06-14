@@ -7,6 +7,7 @@
     * [介绍](architect/application/)
 	* [演示效果](architect/application/DEMO.md)
   * 后台管理手册
+    * [权限管理](architect/admin_platform/authority_management.md)
 	* [去除权限控制](architect/admin_platform/remove_permission.md)
   * 后端手册
     * [数据库版本控制](architect/server_manual/database.md)
