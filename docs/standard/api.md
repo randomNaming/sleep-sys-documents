@@ -23,7 +23,7 @@
 
 所有的 `API` 响应，`必须` 遵守 `HTTP` 设计规范，`必须` 选择合适的 `HTTP` 状态码。`一定不可` 所有接口都返回状态码为 `200` 的 `HTTP` 响应，如：
 
-```
+```http
 HTTP/1.1 200 ok
 Content-Type: application/json
 Server: example.com
@@ -39,7 +39,7 @@ Server: example.com
 
 或
 
-```
+```http
 HTTP/1.1 200 ok
 Content-Type: application/json
 Server: example.com
@@ -55,7 +55,7 @@ Server: example.com
 正确示例：
 
 额外的媒体信息
-```
+```json
 {
     "data": [
         {

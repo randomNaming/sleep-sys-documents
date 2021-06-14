@@ -110,7 +110,7 @@ spring:
 		validate-on-migrate: true
 ```
 * 最后直接运行SpringBoot应用，即可自动创建好对应的数据库，控制台会输出如下信息
-```
+```bash
 ......
 2021-03-14 14:18:21.118  INFO 3748 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2021-03-14 14:18:21.296  INFO 3748 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.1.1 by Redgate
